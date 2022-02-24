@@ -1,3 +1,3 @@
 Mysql setup:
-  mysql -u root < admin.sql
-  mysql -u payroll_admin -p payroll < create.sql 
+  mysql -u root -p < admin.sql
+  mysql -u payroll_admin -p < create.sql 
