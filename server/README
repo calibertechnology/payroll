@@ -1,2 +1,2 @@
 Mysql setup:
-  mysql -u <user> -p payroll_db < create.sql 
+  mysql -u payroll_admin -p payroll < create.sql 
