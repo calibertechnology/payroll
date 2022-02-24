@@ -35,6 +35,8 @@ INSERT INTO employees (id, employer, last, first, address, city, state, zip)
   VALUES(1, 1, 'Schmoe', 'Joe', '123 Main St', 'Aliquippa', 'PA', '15001');
 INSERT INTO employee_tax_names VALUES (1,'Federal Income Tax');
 INSERT INTO employee_tax_names VALUES (1,'FUTA With Credit Reduction');
+INSERT INTO employee_tax_names VALUES (1,'FICA SS');
+INSERT INTO employee_tax_names VALUES (1,'FICA Med');
 INSERT INTO employee_tax_names VALUES (1,'PA');
 INSERT INTO employee_tax_names VALUES (1,'PA Unemployment');
 INSERT INTO employee_tax_names VALUES (1,'PA Unemployment Employee');
