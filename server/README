@@ -1,7 +1,13 @@
 This is a minimal database setup, without any provisions for user
 authentication or authorization--anyone using the api can view or change
-records.
+records. We've given the payroll admin user an easily-guessed password and
+included the database config in the source. You'll want to use your own config
+and include a separate .env file which is not captured in source control.
 
 Mysql setup:
+
+  # Set up the database and user rights. You'll need your Mysql root password for this:
   mysql -u root -p < admin.sql
+
+  # Create the tables and data:
   mysql -u payroll_admin -p < create.sql 

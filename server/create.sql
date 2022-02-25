@@ -3,7 +3,7 @@ USE payroll;
 -- The employer(s).
 DROP TABLE IF EXISTS employers;
 CREATE TABLE employers (
-  er_id INT NOT NULL,
+  er_id INT AUTO_INCREMENT,
   company VARCHAR(255) NOT NULL,
   address VARCHAR(255),
   city VARCHAR(255),
@@ -15,7 +15,7 @@ CREATE TABLE employers (
 -- The employees.
 DROP TABLE IF EXISTS employees;
 CREATE TABLE employees (
-  id INT NOT NULL,
+  id INT AUTO_INCREMENT,
   employer INT NOT NULL REFERENCES employer(er_id),
   last VARCHAR(255) NOT NULL,
   first VARCHAR(255) NOT NULL,
