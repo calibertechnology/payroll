@@ -1,3 +1,7 @@
+This is a minimal database setup, without any provisions for user
+authentication or authorization--anyone using the api can view or change
+records.
+
 Mysql setup:
   mysql -u root -p < admin.sql
   mysql -u payroll_admin -p < create.sql 
