@@ -1,5 +1,6 @@
--- as payroll_admin:
 USE payroll;
+
+-- The employer(s).
 DROP TABLE IF EXISTS employers;
 CREATE TABLE employers (
   er_id INT NOT NULL,
@@ -10,6 +11,8 @@ CREATE TABLE employers (
   zip VARCHAR(255),
   PRIMARY KEY(er_id)
 );
+
+-- The employees.
 DROP TABLE IF EXISTS employees;
 CREATE TABLE employees (
   id INT NOT NULL,
@@ -22,6 +25,13 @@ CREATE TABLE employees (
   zip VARCHAR(255),
   PRIMARY KEY(id)
 );
+
+-- Taxes applied for each employee for each paycheck.
+-- Some employees may opt for different filing status for
+-- federal vs state taxes. For example, single for federal
+-- but married for state.
+-- Some tax formulas require extra information, which can be
+-- carried in the exemptions, miscellaneous, or auxiliary fields.
 DROP TABLE IF EXISTS employee_taxes;
 CREATE TABLE employee_taxes (
   emp_id INT NOT NULL REFERENCES employees(id),
