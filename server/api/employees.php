@@ -35,12 +35,13 @@ class Employees {
   }
 
   function save ($employer, $last, $first, $address, $city, $state, $zip, $id=null) {
-    $data = array(":id" => $id, ":employer" => $employer, ":last" => $last, ":first" => $first,
+    $data = array(":employer" => $employer, ":last" => $last, ":first" => $first,
       ":address" => $address, ":city" => $city, ":state" => $state, ":zip" => $zip);
     if ($id===null) {
       $sql = "INSERT INTO employees (employer, last, first, address, city, state, zip) VALUES
         (:employer, :last, :first, :address, :city, :state, :zip)";
     } else {
+      $data[':id'] = $id;
       $sql = "UPDATE employees SET employer=:employer, last=:last, first=:first,
         address=:address, city=:city, state=:state, zip=:zip WHERE id=:id";
     }
@@ -100,10 +101,6 @@ if (isset($_POST["req"])) {
 
   case "all":
     respond(true, "OK", $EMP->all($_POST["emp_id"]));
-    break;
-
-  case "out":
-    respond(true, "OK");
     break;
   }
 }
